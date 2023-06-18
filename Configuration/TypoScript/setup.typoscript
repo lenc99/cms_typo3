@@ -1,0 +1,45 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
+
+
+##############
+#### PAGE ####
+##############
+page {
+    includeCSS {
+        theme = EXT:base_website/Resources/Public/Scss/Theme/theme.scss
+        agency = EXT:base_website/Resources/Public/Css/styles.css
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJS {
+        myScript = EXT:base_website/Resources/Public/Javascript/Dist/scripts.js
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    includeJSFooter {
+        base_website_scripts = EXT:base_website/Resources/Public/JavaScript/Dist/scripts.js
+    }
+}
+
+lib { 
+    copyright = COA
+    copyright {
+        10 = TEXT
+        10.value = Copyright
+        20 = TEXT
+         20 {
+            data = date: Y
+            wrap = &copy; CMS&nbsp;|&nbsp;by Julius, Leon
+         }
+         wrap = <p>|</p>
+    }
+}
