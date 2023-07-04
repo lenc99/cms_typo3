@@ -5,7 +5,6 @@
 <f:variable name="headerClass">{headerClass}{f:if(condition: theme.navigation.type, else:' navbar-top', then:' navbar-{theme.navigation.type} navbar-fixed-{theme.navigation.type}')}</f:variable>
 <header id="page-header" class="{headerClass}">
     <div class="container">
-        PIMMEL
         <f:render partial="Header/Logo" arguments="{_all}" />
         <f:if condition="{mainnavigation}">
             <f:render partial="Header/Toggle" arguments="{_all}" />

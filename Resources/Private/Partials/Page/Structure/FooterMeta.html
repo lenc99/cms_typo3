@@ -6,6 +6,7 @@
                 <div class="frame-group-inner">
                     <div class="frame-container frame-container-default">
                         <div class="frame-inner">
+                            <f:cObject typoscriptObjectPath="lib.copyright"></f:cObject>
                             <f:if condition="{theme.footernavigation.enable} || {theme.contact.enable}">
                                 <div class="footer-menu-section{f:if(condition: theme.footernavigation.enable, then: ' footer-menu-section-has-navigation')}{f:if(condition: theme.contact.enable, then: ' footer-menu-section-has-contact')}">
                                     <f:if condition="{theme.footernavigation.enable}">
