@@ -1,0 +1,25 @@
+
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">
+            <f:if condition="{data.tx_mask_subheader}">
+                {data.tx_mask_subheader -> f:format.nl2br()}
+            </f:if>
+        </div>
+        <div class="masthead-heading text-uppercase">
+            <f:if condition="{data.tx_mask_header}">
+                {data.tx_mask_header -> f:format.nl2br()}
+            </f:if>
+        </div>
+    </div>
+</header>
+
+<f:comment>
+    <f:if condition="{data.tx_mask_header}">
+        {data.tx_mask_header -> f:format.nl2br()}
+    </f:if>
+    <f:if condition="{data.tx_mask_subheader}">
+        {data.tx_mask_subheader -> f:format.nl2br()}
+    </f:if>
+</f:comment>
+
