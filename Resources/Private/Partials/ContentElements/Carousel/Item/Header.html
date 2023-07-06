@@ -3,11 +3,11 @@
     <div class="container">
         <div class="masthead-subheading">
             <f:if condition="{item.data.subheader}">
-                <h{item.data.subheader_layout} class="{f:if(condition: item.data.header_position, then: ' text-{item.data.header_position}')}"><f:format.htmlspecialchars doubleEncode="false">{item.data.subheader}</f:format.htmlspecialchars></h{item.data.subheader_layout}>
+                {item.data.subheader}
             </f:if>
         </div>
         <div class="masthead-heading text-uppercase">
-            <h{item.data.header_layout} class="{f:if(condition: item.data.header_position, then: ' text-{item.data.header_position}')}"><f:format.htmlspecialchars doubleEncode="false">{item.data.header}</f:format.htmlspecialchars></h{item.data.header_layout}>
+            {item.data.header}
         </div>
     </div>
 </header>

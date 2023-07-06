@@ -4,6 +4,29 @@
     "tables": {
         "tt_content": {
             "elements": {
+                "general": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_general_section_heading",
+                        "tx_mask_general_infocontainer"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "Heading for the general section",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "general",
+                    "label": "General",
+                    "labels": [
+                        "Section Heading",
+                        "Infocontainer"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 2
+                },
                 "maskheader": {
                     "color": "#000000",
                     "colorOverlay": "#000000",
@@ -29,6 +52,16 @@
                 }
             },
             "sql": {
+                "tx_mask_general_infocontainer": {
+                    "tt_content": {
+                        "tx_mask_general_infocontainer": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_general_section_heading": {
+                    "tt_content": {
+                        "tx_mask_general_section_heading": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
                 "tx_mask_header": {
                     "tt_content": {
                         "tx_mask_header": "mediumtext"
@@ -41,6 +74,42 @@
                 }
             },
             "tca": {
+                "tx_mask_general_infocontainer": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_general_infocontainer",
+                    "key": "general_infocontainer",
+                    "type": "inline"
+                },
+                "tx_mask_general_section_heading": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_general_section_heading",
+                    "key": "general_section_heading",
+                    "type": "string"
+                },
                 "tx_mask_header": {
                     "config": {
                         "type": "text",
@@ -58,6 +127,88 @@
                     "fullKey": "tx_mask_subheader",
                     "key": "subheader",
                     "type": "text"
+                }
+            }
+        },
+        "tx_mask_general_infocontainer": {
+            "sql": {
+                "tx_mask_description": {
+                    "tx_mask_general_infocontainer": {
+                        "tx_mask_description": "mediumtext"
+                    }
+                },
+                "tx_mask_icon": {
+                    "tx_mask_general_infocontainer": {
+                        "tx_mask_icon": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_icon_heading": {
+                    "tx_mask_general_infocontainer": {
+                        "tx_mask_icon_heading": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_description": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_description",
+                    "inlineParent": "tx_mask_general_infocontainer",
+                    "key": "description",
+                    "label": "Description",
+                    "order": 3,
+                    "type": "richtext"
+                },
+                "tx_mask_icon": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "tt_content",
+                        "overrideChildTca": {
+                            "columns": {
+                                "colPos": {
+                                    "config": {
+                                        "default": 999
+                                    }
+                                }
+                            }
+                        },
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_icon",
+                    "inlineParent": "tx_mask_general_infocontainer",
+                    "key": "icon",
+                    "label": "Icon",
+                    "order": 2,
+                    "type": "content"
+                },
+                "tx_mask_icon_heading": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_icon_heading",
+                    "inlineParent": "tx_mask_general_infocontainer",
+                    "key": "icon_heading",
+                    "label": "Heading",
+                    "order": 1,
+                    "type": "string"
                 }
             }
         }
