@@ -10,11 +10,15 @@
         </div>
         <f:if condition="{data.tx_mask_general_infocontainer}">
             <div class="row text-center">
-            <f:for each="{data.tx_mask_general_infocontainer}" as="data_item">
+            <f:for each="{data.tx_mask_general_infocontainer}" as="data_item" iteration="info">
                 <div class="col-md-4">
                             <span class="fa-stack fa-4x">
                                 <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                                <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                                 <i class="fas fa-solid
+                                    <f:if condition="{info.index} == 0">fa-graduation-cap</f:if>
+                                    <f:if condition="{info.index} == 1">fa-calendar-days</f:if>
+                                    <f:if condition="{info.index} == 2">fa-hourglass</f:if>
+                                 fa-stack-1x fa-inverse"></i>
                             </span>
                     <h4 class="my-3">
                         <f:if condition="{data_item.tx_mask_icon_heading}">
