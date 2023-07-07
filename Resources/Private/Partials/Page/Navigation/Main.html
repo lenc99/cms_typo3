@@ -2,15 +2,19 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <f:render partial="Header/Logo" arguments="{_all}" />
+        <a class="navbar-brand" href="#top"><img src="{f:uri.image(image: logo.normal)}" alt="{logoAlt}"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars ms-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <f:render partial="Navigation/MainNavigation" arguments="{_all}" />
+            <ul class="navbar-nav navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <f:for each="{mainnavigation}" as="item">
+                    <li class="nav-item">
+                        <a href="{item.link}" id="nav-item-{item.data.uid}" class="nav-link">{item.title}</a>
+                    </li>
+                </f:for>
             </ul>
         </div>
     </div>
