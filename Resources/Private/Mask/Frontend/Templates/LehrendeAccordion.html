@@ -1,0 +1,72 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <f:if condition="{data.tx_mask_accordion_heading}">
+        {data.tx_mask_accordion_heading -> f:format.html()}
+
+        <div id="accordion">
+            <f:for each="{data.tx_mask_accordion_section}" as="data_item" iteration="i">
+
+                <div class="card">
+                    <div class="card-header" id="heading{data.uid}{i.index}">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{data.uid}{i.index}" aria-expanded="{f:if(condition: '{f:iteration.isFirst}', then: 'true', else: 'false')}" aria-controls="collapse{data.uid}{i.index}">
+                                <f:if condition="{data_item.tx_mask_accordion_section_heading}">
+                                    {data_item.tx_mask_accordion_section_heading -> f:format.html()}
+                                </f:if>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapse{data.uid}{i.index}" class="collapse {f:if(condition: '{f:iteration.isFirst}', then: 'show', else: '')}" aria-labelledby="heading{data.uid}{i.index}" data-parent="#accordion">
+                        <div class="card-body">
+                            <f:for each="{data_item.tx_mask_accordion_content_element}" as="data_item_item">
+                                <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item_item.uid}</f:cObject>
+                            </f:for>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+
+    <script>
+        jQuery(document).ready(function($) {
+            // Collapse all sections except the first one
+            $('#accordion .collapse:not(:first)').removeClass('show');
+            $('#accordion .btn-link:not(:first)').attr('aria-expanded', 'false');
+        });
+    </script>
+
+</html>
+
+
+
+
+
+
+<f:comment>
+
+<f:if condition="{data.tx_mask_accordion_heading}">
+    {data.tx_mask_accordion_heading -> f:format.html()}
+</f:if>
+<f:if condition="{data.tx_mask_accordion_section}">
+    <ul>
+        <f:for each="{data.tx_mask_accordion_section}" as="data_item">
+            <li>
+                <f:if condition="{data_item.tx_mask_accordion_section_heading}">
+                    {data_item.tx_mask_accordion_section_heading -> f:format.html()}
+                </f:if>
+                <f:if condition="{data_item.tx_mask_accordion_content_element}">
+                    <f:for each="{data_item.tx_mask_accordion_content_element}" as="data_item_item">
+                        <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item_item.uid}</f:cObject>
+                    </f:for>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+
+</f:comment>

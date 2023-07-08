@@ -11323,3 +11323,10 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+
+#accordion .card .card-header h5.mb-0 button,
+#accordion .card .card-header {
+  color: #80bA24;
+  background-color: #4a5c66;
+}
