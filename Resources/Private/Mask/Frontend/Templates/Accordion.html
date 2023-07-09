@@ -1,0 +1,70 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section class="page-section" id="teacher">
+    <div class="container">
+        <div class="text-center">
+            <f:if condition="{data.tx_mask_heading}">
+                <h2 class="section-heading text-uppercase">
+                    {data.tx_mask_heading}
+                </h2>
+            </f:if>
+        </div>
+
+
+
+        <f:if condition="{data.tx_mask_accordion_section}">
+            <div class="accordion" id="accordionFlush">
+                <f:for each="{data.tx_mask_accordion_section}" as="data_item" iteration="i">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading{data_item.uid}">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{data_item.uid}" aria-expanded="false" aria-controls="flush-collapse{data_item.uid}">
+                                    <f:if condition="{data_item.tx_mask_accordion_section_heading}">
+                                        {data_item.tx_mask_accordion_section_heading}
+                                    </f:if>
+                                </button>
+                            </h2>
+                            <div id="flush-collapse{data_item.uid}" class="accordion-collapse collapse" aria-labelledby="flush-heading{data_item.uid}" data-bs-parent="#accordionFlush">
+                                <div class="accordion-body">
+                                    <f:if condition="{data_item.tx_mask_section_item}">
+                                        <f:for each="{data_item.tx_mask_section_item}" as="data_item_item">
+                                            <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item_item.uid}</f:cObject>
+                                        </f:for>
+                                    </f:if>
+                                </div>
+                            </div>
+                        </div>
+                </f:for>
+            </div>
+        </f:if>
+    </div>
+</section>
+</html>
+
+
+
+
+
+
+
+<f:comment>
+    <f:if condition="{data.tx_mask_heading}">
+        {data.tx_mask_heading}
+    </f:if>
+    <f:if condition="{data.tx_mask_accordion_section}">
+        <ul>
+            <f:for each="{data.tx_mask_accordion_section}" as="data_item">
+                <li>
+                    <f:if condition="{data_item.tx_mask_accordion_section_heading}">
+                        {data_item.tx_mask_accordion_section_heading}
+                    </f:if>
+                    <f:if condition="{data_item.tx_mask_section_item}">
+                        <f:for each="{data_item.tx_mask_section_item}" as="data_item_item">
+                            <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item_item.uid}</f:cObject>
+                        </f:for>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+</f:comment>
+
