@@ -1,0 +1,125 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<section class="page-section bg-light" id="portfolio">
+    <div class="container">
+        <div class="text-center">
+            <f:if condition="{data.tx_mask_heading}">
+                <h2 class="section-heading text-uppercase">
+                    {data.tx_mask_heading}
+                </h2>
+            </f:if>
+            <f:if condition="{data.tx_mask_subheading}">
+                <h3 class="section-subheading text-muted">
+                    {data.tx_mask_subheading}
+                </h3>
+            </f:if>
+        </div>
+
+        <f:if condition="{data.tx_mask_portfolio_item}">
+            <div class="row">
+                <f:for each="{data.tx_mask_portfolio_item}" as="portfolio_item" iteration="portfolio_index">
+                    <div class="col-lg-6 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal{portfolio_item.uid}">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <f:for each="{portfolio_item.tx_mask_portfolio_item_image}" as="file">
+                                    <f:image class="img-fluid" image="{file}" alt="{file.description}"/>
+                                </f:for>
+                            </a>
+                            <div class="portfolio-caption">
+                                <f:if condition="{portfolio_item.tx_mask_portfolio_item_heading}">
+                                    <div class="portfolio-caption-heading">
+                                        {portfolio_item.tx_mask_portfolio_item_heading}
+                                    </div>
+                                </f:if>
+                                <f:if condition="{portfolio_item.tx_mask_portfolio_item_subheading}">
+                                    <div class="portfolio-caption-subheading text-muted">
+                                        {portfolio_item.tx_mask_portfolio_item_subheading}
+                                    </div>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </f:for>
+            </div>
+        </f:if>
+    </div>
+</section>
+
+<f:for each="{data.tx_mask_portfolio_item}" as="portfolio_item" iteration="portfolio_index">
+    <div class="portfolio-modal modal fade" id="portfolioModal{portfolio_item.uid}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal">
+                    <f:image src="EXT:base_website/Resources/Public/Images/close-icon.svg" alt="Close modal" />
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">
+                                    <f:if condition="{portfolio_item.tx_mask_portfolio_item_heading}">
+                                        {portfolio_item.tx_mask_portfolio_item_heading}
+                                    </f:if>
+                                </h2>
+                                <p class="item-intro text-muted">
+                                    <f:if condition="{portfolio_item.tx_mask_portfolio_item_subheading}">
+                                        {portfolio_item.tx_mask_portfolio_item_subheading}
+                                    </f:if>
+                                </p>
+                                <f:for each="{portfolio_item.tx_mask_portfolio_item_image}" as="file">
+                                    <f:image class="img-fluid d-block mx-auto" image="{file}" alt="{file.description}"/>
+                                </f:for>
+                                <p>
+                                    <f:if condition="{portfolio_item.tx_mask_modal_popup_description}">
+                                        {portfolio_item.tx_mask_modal_popup_description -> f:format.nl2br()}
+                                    </f:if>
+                                </p>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    schliessen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:for>
+
+</html>
+
+<f:comment>
+
+    <f:if condition="{data.tx_mask_heading}">
+        {data.tx_mask_heading}
+    </f:if>
+    <f:if condition="{data.tx_mask_subheading}">
+        {data.tx_mask_subheading}
+    </f:if>
+    <f:if condition="{data.tx_mask_portfolio_item}">
+        <ul>
+            <f:for each="{data.tx_mask_portfolio_item}" as="data_item">
+                <li>
+                    <f:for each="{data_item.tx_mask_portfolio_item_image}" as="file">
+                        <f:image image="{file}" width="200" />
+                        {file.description}
+                    </f:for>
+                    <f:if condition="{data_item.tx_mask_portfolio_item_heading}">
+                        {data_item.tx_mask_portfolio_item_heading}
+                    </f:if>
+                    <f:if condition="{data_item.tx_mask_portfolio_item_subheading}">
+                        {data_item.tx_mask_portfolio_item_subheading}
+                    </f:if>
+                    <f:if condition="{data_item.tx_mask_modal_popup_description}">
+                        {data_item.tx_mask_modal_popup_description -> f:format.nl2br()}
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+</f:comment>
