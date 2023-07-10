@@ -38,7 +38,7 @@ lib {
         20 = TEXT
          20 {
             data = date: Y
-            wrap = &copy; CMS&nbsp;|&nbsp;by Julius-F Wissemann, León Encarnacao
+            wrap = &copy; CMS&nbsp;|&nbsp;
          }
          wrap = <p>|</p>
     }

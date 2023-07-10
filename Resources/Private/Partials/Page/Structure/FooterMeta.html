@@ -6,7 +6,20 @@
                 <div class="frame-group-inner">
                     <div class="frame-container frame-container-default">
                         <div class="frame-inner">
-                            <f:cObject typoscriptObjectPath="lib.copyright"></f:cObject>
+                            <div class="row align-items-center">
+                                <div class="col-lg-4 text-lg-start">
+                                    <f:cObject typoscriptObjectPath="lib.copyright"></f:cObject>
+                                </div>
+                                <div class="col-lg-4 my-3 my-lg-0">
+                                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <div class="col-lg-4 text-lg-end">
+                                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                                </div>
+                            </div>
                             <f:if condition="{theme.footernavigation.enable} || {theme.contact.enable}">
                                 <div class="footer-menu-section{f:if(condition: theme.footernavigation.enable, then: ' footer-menu-section-has-navigation')}{f:if(condition: theme.contact.enable, then: ' footer-menu-section-has-contact')}">
                                     <f:if condition="{theme.footernavigation.enable}">
@@ -21,7 +34,7 @@
                                     </f:if>
                                 </div>
                             </f:if>
-                            <f:if condition="{theme.meta.enable} || {theme.language.enable} || {theme.copyright.enable} || {theme.socialmedia.enable}">
+                            <!--<f:if condition="{theme.meta.enable} || {theme.language.enable} || {theme.copyright.enable} || {theme.socialmedia.enable}">
                                 <div class="footer-info-section">
                                     <f:if condition="{theme.meta.enable}">
                                         <div class="footer-meta">
@@ -44,7 +57,7 @@
                                         </div>
                                     </f:if>
                                 </div>
-                            </f:if>
+                            </f:if>-->
                         </div>
                     </div>
                 </div>
@@ -53,3 +66,22 @@
     </section>
 </f:if>
 </html>
+
+
+<!--
+<footer class="footer py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+            </div>
+        </div>
+    </div>
+</footer>-->
