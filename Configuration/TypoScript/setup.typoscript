@@ -30,7 +30,7 @@ page {
     }
 }
 
-lib { 
+lib {
     copyright = COA
     copyright {
         10 = TEXT
@@ -38,8 +38,47 @@ lib {
         20 = TEXT
          20 {
             data = date: Y
-            wrap = &copy; CMS&nbsp;|&nbsp;
+            wrap = &copy; CMS&nbspSoSe&nbsp;|&nbsp;
          }
-         wrap = <p>|</p>
     }
+
+    datenschutz = COA
+    datenschutz {
+        10 = TEXT
+        10.value = Datenschutz
+        10.typolink.parameter = https://www.thm.de/datenschutz/
+        10.typolink.ATagParams = class="link-dark text-decoration-none me-3" target="_blank"
+    }
+
+    impressum = COA
+    impressum {
+        10 = TEXT
+        10.value = Impressum
+        10.typolink.parameter = https://www.thm.de/site/impressum.html
+        10.typolink.ATagParams = class="link-dark text-decoration-none" target="_blank"
+    }
+
+    socials = COA
+    socials {
+        10 = TEXT
+        10.value = <i class="fab fa-twitter"></i>
+        10.typolink.parameter = https://twitter.com/THMittelhessen
+        10.typolink.ATagParams = class="btn btn-dark btn-social mx-2" aria-label="Twitter" target="_blank"
+
+        20 = TEXT
+        20.value = <i class="fab fa-facebook-f"></i>
+        20.typolink.parameter = https://www.facebook.com/thm.de/
+        20.typolink.ATagParams = class="btn btn-dark btn-social mx-2" aria-label="Facebook" target="_blank"
+
+        30 = TEXT
+        30.value = <i class="fab fa-linkedin-in"></i>
+        30.typolink.parameter = https://de.linkedin.com/company/thm-technische-hochschule-mittelhessen
+        30.typolink.ATagParams = class="btn btn-dark btn-social mx-2" aria-label="Facebook" target="_blank"
+
+    }
+
+
+
+
+
 }

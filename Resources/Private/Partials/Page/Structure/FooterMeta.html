@@ -1,4 +1,21 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-start">
+                <f:cObject typoscriptObjectPath="lib.copyright"></f:cObject>
+            </div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <f:cObject typoscriptObjectPath="lib.socials"/>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <f:cObject typoscriptObjectPath="lib.datenschutz"/>
+                <f:cObject typoscriptObjectPath="lib.impressum"/>
+            </div>
+        </div>
+    </div>
+</html>
+
+<f:comment>
     <f:if condition="{theme.meta.enable} || {theme.language.enable} || {theme.copyright.enable} || {theme.socialmedia.enable} || {theme.footernavigation.enable} || {theme.contact.enable}">
         <section class="section footer-section footer-section-meta">
             <div class="frame frame-background-none frame-space-before-none frame-space-after-none">
@@ -8,18 +25,14 @@
                             <div class="frame-inner">
                                 <div class="row align-items-center">
                                     <div class="col-lg-4 text-lg-start">
-                                        <p>
-                                             <f:cObject typoscriptObjectPath="lib.copyright"></f:cObject>
-                                        </p>
+                                        <f:cObject typoscriptObjectPath="lib.copyright"></f:cObject>
                                     </div>
                                     <div class="col-lg-4 my-3 my-lg-0">
-                                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                        <f:cObject typoscriptObjectPath="lib.socials"/>
                                     </div>
                                     <div class="col-lg-4 text-lg-end">
-                                        <a class="link-dark text-decoration-none me-3" href="#!">Datenschutz</a>
-                                        <a class="link-dark text-decoration-none" href="#!">Impressum</a>
+                                        <f:cObject typoscriptObjectPath="lib.datenschutz"/>
+                                        <f:cObject typoscriptObjectPath="lib.impressum"/>
                                     </div>
                                 </div>
                             </div>
@@ -29,5 +42,4 @@
             </div>
         </section>
     </f:if>
-</html>
-
+</f:comment>
