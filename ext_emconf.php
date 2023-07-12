@@ -11,6 +11,7 @@ $EM_CONF[$_EXTKEY] = [
         'depends' => [
             'bootstrap_package' => '12.0.0-13.9.99',
             'mask' => '8.2.3',
+            'news' => '11.0'
         ],
         'conflicts' => [
         ],
