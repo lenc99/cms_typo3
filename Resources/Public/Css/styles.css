@@ -2972,7 +2972,7 @@ textarea.form-control-lg {
 
 .btn-dark {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #212529;
+  --bs-btn-bg: #1b1b1e;
   --bs-btn-border-color: #212529;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #424649;
@@ -2985,6 +2985,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #212529;
   --bs-btn-disabled-border-color: #212529;
+  box-shadow: none;
 }
 
 .btn-outline-primary {
@@ -4367,6 +4368,7 @@ textarea.form-control-lg {
   position: relative;
   display: flex;
   align-items: center;
+  text-decoration-line: underline;
   width: 100%;
   padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
   font-size: 1rem;
@@ -6752,10 +6754,10 @@ textarea.form-control-lg {
 }
 
 .link-dark {
-  color: #212529 !important;
+  color: var(--thm-green) !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: #1a1e21 !important;
+  color: var(--thm-green-hover) !important;
 }
 
 .ratio {
@@ -10868,7 +10870,7 @@ p {
 
 @media (min-width: 768px) {
   section {
-    padding: 9rem 0;
+    /*padding: 9rem 0;*/
   }
 }
 .btn-xl {
@@ -11329,11 +11331,6 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-
-#accordion .card .card-header h5.mb-0 button,
-#accordion .card .card-header {
-  color: #80bA24;
-  background-color: #4a5c66;
+  background-color: var(--thm-grey);
+  color: var(--bs-white);
 }
