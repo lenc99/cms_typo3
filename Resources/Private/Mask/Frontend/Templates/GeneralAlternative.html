@@ -1,0 +1,64 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="page-section" id="services">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">
+                <f:if condition="{data.header}">
+                    {data.header}
+                </f:if>
+            </h2>
+        </div>
+        <f:if condition="{data.tx_mask_info}">
+            <div class="row text-center">
+                <f:for each="{data.tx_mask_info}" as="data_item" iteration="i">
+                    <div class="col-md-4">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <f:for each="{data_item.tx_mask_icon}" as="file">
+                                        <f:image image="{file}"/>
+                                    </f:for>
+                                </span>
+                        <h4 class="my-3">
+                            <f:if condition="{data_item.tx_mask_icon_heading}">
+                                {data_item.tx_mask_icon_heading}
+                            </f:if>
+                        </h4>
+                        <p class="text-muted">
+                            <f:if condition="{data_item.tx_mask_icon_subheading}">
+                                {data_item.tx_mask_icon_subheading -> f:format.nl2br()}
+                            </f:if>
+                        </p>
+                    </div>
+                </f:for>
+            </div>
+        </f:if>
+    </div>
+</section>
+</html>
+
+
+
+
+<f:comment>
+    <f:if condition="{data.header}">
+        {data.header}
+    </f:if>
+    <f:if condition="{data.tx_mask_info}">
+        <ul>
+            <f:for each="{data.tx_mask_info}" as="data_item">
+                <li>
+                    <f:for each="{data_item.tx_mask_icon}" as="file">
+                        <f:image image="{file}" width="200" />
+                        {file.description}
+                    </f:for>
+                    <f:if condition="{data_item.tx_mask_icon_heading}">
+                        {data_item.tx_mask_icon_heading}
+                    </f:if>
+                    <f:if condition="{data_item.tx_mask_icon_subheading}">
+                        {data_item.tx_mask_icon_subheading -> f:format.nl2br()}
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </f:if>
+</f:comment>
