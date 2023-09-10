@@ -10854,12 +10854,12 @@ p {
   margin-top: 0;
   margin-bottom: 3rem;
 }
-
 @media (max-width:375px) {
   .page-section h2.section-heading {
     font-size: 2.3rem
   }
 }
+
 .page-section h3.section-subheading, .page-section .section-subheading.h3 {
   font-size: 1rem;
   font-weight: 400;
@@ -11255,6 +11255,7 @@ header.masthead .masthead-heading{
     padding: 0 100px 20px 20px;
   }
 }
+
 .team-member {
   margin-bottom: 3rem;
   text-align: center;
@@ -11267,6 +11268,11 @@ header.masthead .masthead-heading{
 .team-member h4, .team-member .h4 {
   margin-top: 1.5rem;
   margin-bottom: 0;
+}
+
+#teamList .team-member {
+  margin-bottom: 0;
+  text-align: center;
 }
 
 .img-brand {
@@ -11334,3 +11340,55 @@ section#contact form#contactForm :-ms-input-placeholder {
   background-color: var(--thm-grey);
   color: var(--bs-white);
 }
+
+/* TopicView Section */
+
+
+#topicView .container {
+  background: linear-gradient(to bottom, var(--thm-green), var(--thm-grey));
+  border-radius: 5px; /* Same value as the container's border-radius! */
+}
+
+#topicView .topic-item {
+  max-width: 26rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+#topicView .topic-item .topic-link {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+#topicView .topic-item .topic-link .topic-hover {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(74, 92, 102, 0.5);/*var(--thm-grey);*/
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity ease-in-out 0.25s;
+}
+#topicView .topic-item .topic-link .topic-hover .topic-hover-content {
+  font-size: 1.25rem;
+  color: white;
+}
+#topicView .topic-item .topic-link:hover .topic-hover {
+  opacity: 1;
+}
+#topicView .topic-item .topic-caption {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #fff;
+}
+#topicView .topic-item .topic-caption .topic-caption-heading {
+  font-size: 1.5rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+
+
+
