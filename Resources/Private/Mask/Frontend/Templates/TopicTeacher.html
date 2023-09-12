@@ -1,24 +1,100 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="page-section" id="teamList">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">
+                <f:if condition="{data.tx_mask_topic_teacher_heading}">
+                    {data.tx_mask_topic_teacher_heading}
+                </f:if>
+            </h2>
+        </div>
 
+        <f:if condition="{data.tx_mask_topic_teacher}">
+            <f:for each="{data.tx_mask_topic_teacher}" as="data_item">
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-md-6 col-lg-3 my-md-auto order-2 order-md-1 mt-4">
+                        <h4>
+                            <div class="text-center">
+                                <f:if condition="{data_item.tx_mask_topic_teacher_name}">
+                                    {data_item.tx_mask_topic_teacher_name}
+                                </f:if>
+                            </div>
+                        </h4>
+                        <p class="text-muted">
+                            <f:if condition="{data_item.tx_mask_responsibilities_repeat}">
+                                <ul>
+                                    <f:for each="{data_item.tx_mask_responsibilities_repeat}" as="data_item_item">
+                                        <li>
+                                            <f:if condition="{data_item_item.tx_mask_topic_teacher_responsibilities}">
+                                                {data_item_item.tx_mask_topic_teacher_responsibilities}
+                                            </f:if>
+                                        </li>
+                                    </f:for>
+                                </ul>
+                            </f:if>
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 order-1 order-md-2">
+                        <div class="team-member">
+                            <f:for each="{data_item.tx_mask_topic_teacher_image}" as="file">
+                                <f:image class="mx-auto rounded-5" image="{file}" width="200" />
+                                {file.description}
+                            </f:for>
+                        </div>
+                        <div class="text-center mt-3">
+                            <f:if condition="{data_item.tx_mask_topic_teacher_email}">
+                                <f:link.typolink class="btn btn-dark btn-social mx-2" parameter="{data_item.tx_mask_topic_teacher_email}"><i class="fa-solid fa-envelope"></i></f:link.typolink>
+                            </f:if>
+                            <f:if condition="{data_item.tx_mask_topic_teacher_profile_page}">
+                                <f:link.typolink class="btn btn-dark btn-social mx-2" parameter="{data_item.tx_mask_topic_teacher_profile_page}"><i class="fa-solid fa-address-card"></i></f:link.typolink>
+                            </f:if>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </f:if>
+    </div>
+</section>
 
-
-</html>
 
 
 
 
 <f:comment>
-    <f:if condition="{data.tx_mask_topic_teacher_name}">
-        {data.tx_mask_topic_teacher_name}
-    </f:if>
-    <f:for each="{data.image}" as="file">
-        <f:image image="{file}" width="200" />
-        {file.description}
-    </f:for>
-    <f:if condition="{data.tx_mask_topic_teacher_email}">
-        <f:link.typolink parameter="{data.tx_mask_topic_teacher_email}"></f:link.typolink>
-    </f:if>
-    <f:if condition="{data.tx_mask_topic_teacher_profile}">
-        <f:link.typolink parameter="{data.tx_mask_topic_teacher_profile}"></f:link.typolink>
-    </f:if>
+
+<f:if condition="{data.tx_mask_topic_teacher_heading}">
+    {data.tx_mask_topic_teacher_heading}
+</f:if>
+<f:if condition="{data.tx_mask_topic_teacher}">
+    <ul>
+        <f:for each="{data.tx_mask_topic_teacher}" as="data_item">
+            <li>
+                <f:for each="{data_item.tx_mask_topic_teacher_image}" as="file">
+                    <f:image image="{file}" width="200" />
+                    {file.description}
+                </f:for>
+                <f:if condition="{data_item.tx_mask_topic_teacher_name}">
+                    {data_item.tx_mask_topic_teacher_name}
+                </f:if>
+                <f:if condition="{data_item.tx_mask_responsibilities_repeat}">
+                    <ul>
+                        <f:for each="{data_item.tx_mask_responsibilities_repeat}" as="data_item_item">
+                            <li>
+                                <f:if condition="{data_item_item.tx_mask_topic_teacher_responsibilities}">
+                                    {data_item_item.tx_mask_topic_teacher_responsibilities}
+                                </f:if>
+                            </li>
+                        </f:for>
+                    </ul>
+                </f:if>
+                <f:if condition="{data_item.tx_mask_topic_teacher_email}">
+                    <f:link.typolink parameter="{data_item.tx_mask_topic_teacher_email}"></f:link.typolink>
+                </f:if>
+                <f:if condition="{data_item.tx_mask_topic_teacher_profile_page}">
+                    <f:link.typolink parameter="{data_item.tx_mask_topic_teacher_profile_page}"></f:link.typolink>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+
 </f:comment>
