@@ -38,6 +38,14 @@ plugin.bootstrap_package {
     }
 }
 
+plugin.tx_news {
+   view {
+      templateRootPath = EXT:base_website/Resources/Private/Extensions/News/Templates/
+      partialRootPath = EXT:base_website/Resources/Private/Extensions/News/Partials/
+      layoutRootPath = EXT:base_website/Resources/Private/Extensions/News/Layouts/
+   }
+}
+
 
 ########################
 ### CONTENT ELEMENTS ###

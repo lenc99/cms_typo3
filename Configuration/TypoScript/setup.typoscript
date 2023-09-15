@@ -2,7 +2,8 @@
 #### DEPENDENCIES ####
 ######################
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
-
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mask/Configuration/TypoScript/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TypoScript/setup.typoscript">
 
 ##############
 #### PAGE ####
@@ -31,6 +32,15 @@ page {
 }
 
 lib {
+    maskContentElement {
+
+        templateRootPaths.0 < lib.contentElement.templateRootPaths.0
+        partialRootPaths.0 < lib.contentElement.partialRootPaths.0
+        layoutRootPaths.0 < lib.contentElement.layoutRootPaths.0
+
+        settings < lib.contentElement.settings
+    }
+
     copyright = COA
     copyright {
         10 = TEXT
@@ -76,9 +86,4 @@ lib {
         30.typolink.ATagParams = class="btn btn-dark btn-social mx-2" aria-label="Facebook" target="_blank"
 
     }
-
-
-
-
-
 }
