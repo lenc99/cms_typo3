@@ -10846,9 +10846,6 @@ p {
   line-height: 1.75;
 }
 
-.page-section {
-  padding: 6rem 0;
-}
 .page-section h2.section-heading, .page-section .section-heading.h2 {
   font-size: 2.5rem;
   margin-top: 0;
@@ -11341,9 +11338,9 @@ section#contact form#contactForm :-ms-input-placeholder {
   color: var(--bs-white);
 }
 
-/* TopicView Section */
-
-
+/**
+ TopicView Section
+ */
 #topicView .container {
   background-color: #ced4da;
   border-radius: 5px; /* Same value as the container's border-radius! */
@@ -11365,7 +11362,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(74, 92, 102, 0.5);/*var(--thm-grey);*/
+  background: rgba(74, 92, 102, 0.5); /*var(--thm-grey);*/
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -11389,6 +11386,14 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-weight: 700;
   margin-bottom: 0;
   text-decoration: none;
+}
+
+
+/**
+ Frame Overrides
+ */
+.frame-background-light {
+  --frame-background: var(--bs-light);
 }
 
 

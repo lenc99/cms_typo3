@@ -1,33 +1,33 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<f:if condition="{data.tx_mask_teacher}">
-    <div class="row">
-        <f:for each="{data.tx_mask_teacher}" as="data_item">
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="team-member">
-                    <f:for each="{data_item.tx_mask_teacher_image}" as="file">
-                        <f:image class="mx-auto rounded-circle" image="{file}" alt="{file.description}" />
-                    </f:for>
-                    <f:if condition="{data_item.tx_mask_teacher_name}">
-                        <h4>
-                            {data_item.tx_mask_teacher_name}
-                        </h4>
-                    </f:if>
-                    <f:if condition="{data_item.tx_mask_teacher_main_area}">
-                        <p class="text-muted">
-                            {data_item.tx_mask_teacher_main_area}
-                        </p>
-                    </f:if>
-                    <f:if condition="{data_item.tx_mask_teacher_email}">
-                        <f:link.typolink class="btn btn-dark btn-social mx-2" parameter="{data_item.tx_mask_teacher_email}"><i class="fa-solid fa-envelope"></i></f:link.typolink>
-                    </f:if>
-                    <f:if condition="{data_item.tx_mask_profile_page}">
-                        <f:link.typolink class="btn btn-dark btn-social mx-2" parameter="{data_item.tx_mask_profile_page}"><i class="fa-solid fa-address-card"></i></f:link.typolink>
-                    </f:if>
+    <f:if condition="{data.tx_mask_teacher}">
+        <div class="row">
+            <f:for each="{data.tx_mask_teacher}" as="data_item">
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="team-member">
+                        <f:for each="{data_item.tx_mask_teacher_image}" as="file">
+                            <f:image class="mx-auto rounded-circle" image="{file}" alt="{file.description}" />
+                        </f:for>
+                        <f:if condition="{data_item.tx_mask_teacher_name}">
+                            <h4>
+                                {data_item.tx_mask_teacher_name}
+                            </h4>
+                        </f:if>
+                        <f:if condition="{data_item.tx_mask_teacher_main_area}">
+                            <p class="text-muted">
+                                {data_item.tx_mask_teacher_main_area}
+                            </p>
+                        </f:if>
+                        <f:if condition="{data_item.tx_mask_teacher_email}">
+                            <f:link.typolink class="btn btn-dark btn-social mx-2" parameter="{data_item.tx_mask_teacher_email}"><i class="fa-solid fa-envelope"></i></f:link.typolink>
+                        </f:if>
+                        <f:if condition="{data_item.tx_mask_profile_page}">
+                            <f:link.typolink class="btn btn-dark btn-social mx-2" parameter="{data_item.tx_mask_profile_page}"><i class="fa-solid fa-address-card"></i></f:link.typolink>
+                        </f:if>
+                    </div>
                 </div>
-            </div>
-        </f:for>
-    </div>
-</f:if>
+            </f:for>
+        </div>
+    </f:if>
 
 </html>

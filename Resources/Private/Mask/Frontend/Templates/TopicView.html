@@ -1,46 +1,51 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default"/>
 
-    <section class="page-section bg-light" id="topicView">
-        <div class="container border border-1 rounded-1">
-            <div class="text-center">
-                <h2 class="section-heading mt-5 text-uppercase">
-                    <f:if condition="{data.header}">
-                        {data.header}
-                    </f:if>
-                </h2>
-            </div>
-            <f:if condition="{data.tx_mask_topic_view_items}">
-                <div class="row">
-                    <f:for each="{data.tx_mask_topic_view_items}" as="data_item">
-                            <f:if condition="{data_item.tx_mask_topic_view_link}">
-                                <f:for each="{data_item.tx_mask_topic_view_link}" as="data_item_item">
-                                    <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item_item.uid}</f:cObject>
-                                </f:for>
-                            </f:if>
-                    </f:for>
+    <f:section name="Main">
+        <section class="page-section bg-light" id="topicView">
+            <div class="container border border-1 rounded-1">
+                <div class="text-center">
+                    <h2 class="section-heading mt-5 text-uppercase">
+                        <f:if condition="{data.header}">
+                            {data.header}
+                        </f:if>
+                    </h2>
                 </div>
-            </f:if>
-        </div>
-    </section>
+                <f:if condition="{data.tx_mask_topic_view_items}">
+                    <div class="row">
+                        <f:for each="{data.tx_mask_topic_view_items}" as="data_item">
+                                <f:if condition="{data_item.tx_mask_topic_view_link}">
+                                    <f:for each="{data_item.tx_mask_topic_view_link}" as="data_item_item">
+                                        <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item_item.uid}</f:cObject>
+                                    </f:for>
+                                </f:if>
+                        </f:for>
+                    </div>
+                </f:if>
+            </div>
+        </section>
+    </f:section>
+
+    <f:comment>
+        <f:if condition="{data.header}">
+            {data.header}
+        </f:if>
+        <f:if condition="{data.tx_mask_topic_view_items}">
+            <ul>
+                <f:for each="{data.tx_mask_topic_view_items}" as="data_item">
+                    <li>
+                        <f:if condition="{data_item.tx_mask_topic_view_link}">
+                            <f:for each="{data_item.tx_mask_topic_view_link}" as="data_item_item">
+                                <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item_item.uid}</f:cObject>
+                            </f:for>
+                        </f:if>
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </f:comment>
 
 </html>
 
 
-<f:comment>
-    <f:if condition="{data.header}">
-        {data.header}
-    </f:if>
-    <f:if condition="{data.tx_mask_topic_view_items}">
-        <ul>
-            <f:for each="{data.tx_mask_topic_view_items}" as="data_item">
-                <li>
-                    <f:if condition="{data_item.tx_mask_topic_view_link}">
-                        <f:for each="{data_item.tx_mask_topic_view_link}" as="data_item_item">
-                            <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item_item.uid}</f:cObject>
-                        </f:for>
-                    </f:if>
-                </li>
-            </f:for>
-        </ul>
-    </f:if>
-</f:comment>
+
