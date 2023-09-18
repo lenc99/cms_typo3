@@ -8,7 +8,7 @@
 <div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="https://schema.org/Article">
 	<n:excludeDisplayedNews newsItem="{newsItem}"/>
 	<!-- header -->
-	<div class="header">
+	<div class="header mb-2">
 		<h3>
 			<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" additionalAttributes="{itemprop:'url'}">
 				<span itemprop="headline">{newsItem.title}</span>
