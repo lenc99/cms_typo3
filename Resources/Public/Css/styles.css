@@ -11384,12 +11384,14 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-decoration: none;
 }
 
-
 /**
  Frame Overrides
  */
 .frame-background-light {
+  --frame-color: var(--thm-grey);
   --frame-background: var(--bs-light);
+  --frame-link-color: var(--thm-green);
+  --frame-link-hover-color: var(--thm-green-hover);
 }
 
 
