@@ -254,10 +254,11 @@ sup {
 
 a {
   color: var(--bs-link-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   color: var(--bs-link-hover-color);
+  text-decoration: none;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -11387,6 +11388,21 @@ section#contact form#contactForm :-ms-input-placeholder {
 /**
  Frame Overrides
  */
+
+.frame {
+  color: var(--thm-grey);
+}
+
+.frame a[class=""],
+.frame a:not([class]) {
+  color: var(--thm-green);
+}
+
+.frame a[class=""]:hover,
+.frame a:not([class]):hover {
+  color: var(--thm-green-hover);
+}
+
 .frame-background-light {
   --frame-color: var(--thm-grey);
   --frame-background: var(--bs-light);
