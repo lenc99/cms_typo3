@@ -2,7 +2,10 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="#top"><img src="{f:uri.image(image: logo.normal)}" alt="{logoAlt}"></a>
+        <f:render partial="Header/Logo" arguments="{_all}" />
+        <div class="nav-language">
+            <f:render partial="Navigation/Language" arguments="{_all}" />
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu

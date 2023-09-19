@@ -10975,14 +10975,23 @@ header.masthead .masthead-subheading{
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 header.masthead .masthead-heading{
-  font-size: 3.25rem;
+  font-size: 1.25rem;
   font-weight: 700;
   line-height: 3.25rem;
   margin-bottom: 2rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
+  header.masthead .masthead-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 992px) {
   header.masthead {
     padding-top: 17rem;
     padding-bottom: 12.5rem;
@@ -11408,6 +11417,44 @@ section#contact form#contactForm :-ms-input-placeholder {
   --frame-background: var(--bs-light);
   --frame-link-color: var(--thm-green);
   --frame-link-hover-color: var(--thm-green-hover);
+}
+
+/*
+  Language Menu
+ */
+.nav-language {
+  overflow: hidden;
+}
+
+.nav-language .language-menu {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+@media (min-width: 576px) {
+  .nav-language .language-menu {
+    margin-left: -.5em;
+    margin-right: -.5em;
+  }
+  .nav-language .language-menu > li {
+    display: inline-block;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+}
+
+.nav-language .language-menu .active a {
+  font-weight: bold;
+}
+
+/*
+ Scroll-Top Overrides
+ */
+
+.scroll-top:active, .scroll-top:focus, .scroll-top:hover {
+  color: #ffffff;
+  background-color: var(--thm-green);
 }
 
 
