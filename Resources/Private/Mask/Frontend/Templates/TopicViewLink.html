@@ -1,21 +1,19 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <div class="col mb-4">
         <div class="topic-item">
-            <a class="topic-link" href="">
+            <f:link.typolink parameter="{data.image.0.link}" class="topic-link">
                 <div class="topic-hover">
                     <div class="topic-hover-content"></div>
                 </div>
-                <f:for each="{data.image}" as="file">
-                    <f:image image="{file}" class="img-fluid"/>
-                    {file.description}
-                </f:for>
-            </a>
+                <f:image image="{data.image.0}" class="img-fluid"/>
+            </f:link.typolink>
+
             <div class="topic-caption">
-                <a class="topic-caption-heading" href="#">
+                <div class="topic-caption-heading">
                     <f:if condition="{data.tx_mask_link_heading}">
                         {data.tx_mask_link_heading}
                     </f:if>
-                </a>
+                </div>
             </div>
         </div>
     </div>
