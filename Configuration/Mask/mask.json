@@ -4,6 +4,29 @@
     "tables": {
         "tt_content": {
             "elements": {
+                "accordion": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_heading",
+                        "tx_mask_accordion_section"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "accordion",
+                    "label": "Accordion",
+                    "labels": [
+                        "Heading",
+                        "Accordion Section"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 5
+                },
                 "general": {
                     "color": "#000000",
                     "colorOverlay": "#000000",
@@ -27,12 +50,58 @@
                     "shortLabel": "",
                     "sorting": 2
                 },
-                "maskheader": {
+                "portfolio": {
                     "color": "#000000",
                     "colorOverlay": "#000000",
                     "columns": [
-                        "tx_mask_header",
-                        "tx_mask_subheader"
+                        "tx_mask_heading",
+                        "tx_mask_subheading",
+                        "tx_mask_portfolio_item"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "portfolio",
+                    "label": "Portfolio",
+                    "labels": [
+                        "Heading",
+                        "Subheading",
+                        "Portfolio Item"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 4
+                },
+                "teacher": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_teacher"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "Repeating mask element. Used to add a Teacher Element to the Accordion Section"
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "teacher",
+                    "label": "Teacher",
+                    "labels": [
+                        "Teacher"
+                    ],
+                    "shortLabel": "Teacher",
+                    "sorting": 6
+                },
+                "topic_description": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_topic_description_heading",
+                        "tx_mask_topic_description"
                     ],
                     "description": "",
                     "descriptions": [
@@ -41,17 +110,116 @@
                     ],
                     "icon": "",
                     "iconOverlay": "",
-                    "key": "maskheader",
-                    "label": "MaskHeader",
+                    "key": "topic_description",
+                    "label": "Topic Description",
                     "labels": [
-                        "Header",
-                        "Subheader"
+                        "Topic Description Heading",
+                        "Topic Description"
                     ],
                     "shortLabel": "",
-                    "sorting": 1
+                    "sorting": 11
+                },
+                "topic_teacher": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_topic_teacher_heading",
+                        "tx_mask_topic_teacher"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "topic_teacher",
+                    "label": "Topic Teacher",
+                    "labels": [
+                        "Topic Teacher Heading",
+                        "Topic Teacher"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
+                },
+                "topic_view": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "header",
+                        "tx_mask_topic_view_items"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "topic_view",
+                    "label": "Topic View",
+                    "labels": [
+                        "Topic View Header",
+                        "Topic View Items"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 10
+                },
+                "topic_view_link": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "image",
+                        "tx_mask_link_heading"
+                    ],
+                    "columnsOverride": {
+                        "image": {
+                            "config": {
+                                "appearance": {
+                                    "elementBrowserEnabled": 1,
+                                    "enabledControls": {
+                                        "delete": 1,
+                                        "dragdrop": 1,
+                                        "hide": 1,
+                                        "info": 1,
+                                        "localize": 1,
+                                        "sort": 0
+                                    },
+                                    "fileUploadAllowed": 1,
+                                    "useSortable": 1
+                                },
+                                "maxitems": "1",
+                                "minitems": ""
+                            },
+                            "fullKey": "image",
+                            "imageoverlayPalette": 1,
+                            "key": "image",
+                            "type": "file"
+                        }
+                    },
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "topic_view_link",
+                    "label": "Topic View Link",
+                    "labels": [
+                        "Image Link",
+                        "Link Heading"
+                    ],
+                    "shortLabel": "",
+                    "sorting": 0
                 }
             },
             "sql": {
+                "tx_mask_accordion_section": {
+                    "tt_content": {
+                        "tx_mask_accordion_section": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
                 "tx_mask_general_infocontainer": {
                     "tt_content": {
                         "tx_mask_general_infocontainer": "int(11) unsigned DEFAULT '0' NOT NULL"
@@ -62,19 +230,72 @@
                         "tx_mask_general_section_heading": "varchar(255) DEFAULT '' NOT NULL"
                     }
                 },
-                "tx_mask_header": {
+                "tx_mask_heading": {
                     "tt_content": {
-                        "tx_mask_header": "mediumtext"
+                        "tx_mask_heading": "varchar(255) DEFAULT '' NOT NULL"
                     }
                 },
-                "tx_mask_subheader": {
+                "tx_mask_link_heading": {
                     "tt_content": {
-                        "tx_mask_subheader": "mediumtext"
+                        "tx_mask_link_heading": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_portfolio_item": {
+                    "tt_content": {
+                        "tx_mask_portfolio_item": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_subheading": {
+                    "tt_content": {
+                        "tx_mask_subheading": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_teacher": {
+                    "tt_content": {
+                        "tx_mask_teacher": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_topic_description": {
+                    "tt_content": {
+                        "tx_mask_topic_description": "mediumtext"
+                    }
+                },
+                "tx_mask_topic_description_heading": {
+                    "tt_content": {
+                        "tx_mask_topic_description_heading": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_topic_teacher": {
+                    "tt_content": {
+                        "tx_mask_topic_teacher": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_topic_teacher_heading": {
+                    "tt_content": {
+                        "tx_mask_topic_teacher_heading": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_topic_view_items": {
+                    "tt_content": {
+                        "tx_mask_topic_view_items": "int(11) unsigned DEFAULT '0' NOT NULL"
                     }
                 }
             },
             "tca": {
-                "tx_mask_general_infocontainer": {
+                "header": {
+                    "coreField": 1,
+                    "fullKey": "header",
+                    "key": "header",
+                    "type": "string"
+                },
+                "image": {
+                    "coreField": 1,
+                    "fullKey": "image",
+                    "imageoverlayPalette": 1,
+                    "key": "image",
+                    "type": "file"
+                },
+                "tx_mask_accordion_section": {
                     "config": {
                         "appearance": {
                             "enabledControls": {
@@ -98,35 +319,292 @@
                         "foreign_table_field": "parenttable",
                         "type": "inline"
                     },
+                    "fullKey": "tx_mask_accordion_section",
+                    "key": "accordion_section",
+                    "type": "inline"
+                },
+                "tx_mask_general_infocontainer": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "maxitems": "3",
+                        "minitems": "0",
+                        "type": "inline"
+                    },
                     "fullKey": "tx_mask_general_infocontainer",
                     "key": "general_infocontainer",
                     "type": "inline"
                 },
                 "tx_mask_general_section_heading": {
                     "config": {
+                        "eval": "required",
                         "type": "input"
                     },
                     "fullKey": "tx_mask_general_section_heading",
                     "key": "general_section_heading",
                     "type": "string"
                 },
-                "tx_mask_header": {
+                "tx_mask_heading": {
                     "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_heading",
+                    "key": "heading",
+                    "type": "string"
+                },
+                "tx_mask_link_heading": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_link_heading",
+                    "key": "link_heading",
+                    "type": "string"
+                },
+                "tx_mask_portfolio_item": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "ctrl": {
+                        "label": "Schwerpunkt"
+                    },
+                    "fullKey": "tx_mask_portfolio_item",
+                    "key": "portfolio_item",
+                    "type": "inline"
+                },
+                "tx_mask_subheading": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_subheading",
+                    "key": "subheading",
+                    "type": "string"
+                },
+                "tx_mask_teacher": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "ctrl": {
+                        "label": "tx_mask_teacher_name"
+                    },
+                    "fullKey": "tx_mask_teacher",
+                    "key": "teacher",
+                    "type": "inline"
+                },
+                "tx_mask_topic_description": {
+                    "config": {
+                        "behaviour": {
+                            "allowLanguageSynchronization": 0
+                        },
                         "type": "text",
                         "wrap": "virtual"
                     },
-                    "fullKey": "tx_mask_header",
-                    "key": "header",
+                    "fullKey": "tx_mask_topic_description",
+                    "key": "topic_description",
                     "type": "text"
                 },
-                "tx_mask_subheader": {
+                "tx_mask_topic_description_heading": {
                     "config": {
-                        "type": "text",
-                        "wrap": "virtual"
+                        "type": "input"
                     },
-                    "fullKey": "tx_mask_subheader",
-                    "key": "subheader",
-                    "type": "text"
+                    "fullKey": "tx_mask_topic_description_heading",
+                    "key": "topic_description_heading",
+                    "type": "string"
+                },
+                "tx_mask_topic_teacher": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "ctrl": {
+                        "label": "tx_mask_topic_teacher_name"
+                    },
+                    "fullKey": "tx_mask_topic_teacher",
+                    "key": "topic_teacher",
+                    "type": "inline"
+                },
+                "tx_mask_topic_teacher_heading": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_topic_teacher_heading",
+                    "key": "topic_teacher_heading",
+                    "type": "string"
+                },
+                "tx_mask_topic_view_items": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "ctrl": {
+                        "label": "topic view items"
+                    },
+                    "fullKey": "tx_mask_topic_view_items",
+                    "key": "topic_view_items",
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_accordion_section": {
+            "sql": {
+                "tx_mask_accordion_section_heading": {
+                    "tx_mask_accordion_section": {
+                        "tx_mask_accordion_section_heading": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_section_item": {
+                    "tx_mask_accordion_section": {
+                        "tx_mask_section_item": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_accordion_section_heading": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_accordion_section_heading",
+                    "inlineParent": "tx_mask_accordion_section",
+                    "key": "accordion_section_heading",
+                    "label": "Accordion Section Heading",
+                    "order": 1,
+                    "type": "string"
+                },
+                "tx_mask_section_item": {
+                    "cTypes": [
+                        "mask_teacher"
+                    ],
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "tt_content",
+                        "overrideChildTca": {
+                            "columns": {
+                                "colPos": {
+                                    "config": {
+                                        "default": 999
+                                    }
+                                }
+                            }
+                        },
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_section_item",
+                    "inlineParent": "tx_mask_accordion_section",
+                    "key": "section_item",
+                    "label": "Section Item",
+                    "order": 2,
+                    "type": "content"
                 }
             }
         },
@@ -181,6 +659,8 @@
                         },
                         "foreign_sortby": "sorting",
                         "foreign_table": "tt_content",
+                        "maxitems": "1",
+                        "minitems": "1",
                         "overrideChildTca": {
                             "columns": {
                                 "colPos": {
@@ -201,6 +681,7 @@
                 },
                 "tx_mask_icon_heading": {
                     "config": {
+                        "eval": "required",
                         "type": "input"
                     },
                     "fullKey": "tx_mask_icon_heading",
@@ -209,6 +690,397 @@
                     "label": "Heading",
                     "order": 1,
                     "type": "string"
+                }
+            }
+        },
+        "tx_mask_portfolio_item": {
+            "sql": {
+                "tx_mask_modal_popup_description": {
+                    "tx_mask_portfolio_item": {
+                        "tx_mask_modal_popup_description": "mediumtext"
+                    }
+                },
+                "tx_mask_portfolio_item_heading": {
+                    "tx_mask_portfolio_item": {
+                        "tx_mask_portfolio_item_heading": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_portfolio_item_image": {
+                    "tx_mask_portfolio_item": {
+                        "tx_mask_portfolio_item_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_portfolio_item_subheading": {
+                    "tx_mask_portfolio_item": {
+                        "tx_mask_portfolio_item_subheading": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_modal_popup_description": {
+                    "config": {
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "fullKey": "tx_mask_modal_popup_description",
+                    "inlineParent": "tx_mask_portfolio_item",
+                    "key": "modal_popup_description",
+                    "label": "Modal Popup Description",
+                    "order": 4,
+                    "type": "text"
+                },
+                "tx_mask_portfolio_item_heading": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_portfolio_item_heading",
+                    "inlineParent": "tx_mask_portfolio_item",
+                    "key": "portfolio_item_heading",
+                    "label": "Portfolio Item Heading",
+                    "order": 2,
+                    "type": "string"
+                },
+                "tx_mask_portfolio_item_image": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "minitems": ""
+                    },
+                    "fullKey": "tx_mask_portfolio_item_image",
+                    "imageoverlayPalette": 1,
+                    "inlineParent": "tx_mask_portfolio_item",
+                    "key": "portfolio_item_image",
+                    "label": "Portfolio Item Image",
+                    "order": 1,
+                    "type": "file"
+                },
+                "tx_mask_portfolio_item_subheading": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_portfolio_item_subheading",
+                    "inlineParent": "tx_mask_portfolio_item",
+                    "key": "portfolio_item_subheading",
+                    "label": "Portfolio Item Subheading",
+                    "order": 3,
+                    "type": "string"
+                }
+            }
+        },
+        "tx_mask_responsibilities_repeat": {
+            "sql": {
+                "tx_mask_topic_teacher_responsibilities": {
+                    "tx_mask_responsibilities_repeat": {
+                        "tx_mask_topic_teacher_responsibilities": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_topic_teacher_responsibilities": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_topic_teacher_responsibilities",
+                    "inlineParent": "tx_mask_responsibilities_repeat",
+                    "key": "topic_teacher_responsibilities",
+                    "label": "Topic Teacher Responsibilities",
+                    "order": 1,
+                    "type": "string"
+                }
+            }
+        },
+        "tx_mask_teacher": {
+            "sql": {
+                "tx_mask_profile_page": {
+                    "tx_mask_teacher": {
+                        "tx_mask_profile_page": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_teacher_email": {
+                    "tx_mask_teacher": {
+                        "tx_mask_teacher_email": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_teacher_image": {
+                    "tx_mask_teacher": {
+                        "tx_mask_teacher_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_teacher_main_area": {
+                    "tx_mask_teacher": {
+                        "tx_mask_teacher_main_area": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_teacher_name": {
+                    "tx_mask_teacher": {
+                        "tx_mask_teacher_name": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_profile_page": {
+                    "config": {
+                        "renderType": "inputLink",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_profile_page",
+                    "inlineParent": "tx_mask_teacher",
+                    "key": "profile_page",
+                    "label": "Teacher Profile Page",
+                    "order": 5,
+                    "type": "link"
+                },
+                "tx_mask_teacher_email": {
+                    "config": {
+                        "fieldControl": {
+                            "linkPopup": {
+                                "options": {
+                                    "blindLinkOptions": "page,url,file,telephone,folder"
+                                }
+                            }
+                        },
+                        "renderType": "inputLink",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_teacher_email",
+                    "inlineParent": "tx_mask_teacher",
+                    "key": "teacher_email",
+                    "label": "Teacher Email",
+                    "order": 4,
+                    "type": "link"
+                },
+                "tx_mask_teacher_image": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "minitems": ""
+                    },
+                    "fullKey": "tx_mask_teacher_image",
+                    "imageoverlayPalette": 1,
+                    "inlineParent": "tx_mask_teacher",
+                    "key": "teacher_image",
+                    "label": "Teacher Image",
+                    "order": 1,
+                    "type": "file"
+                },
+                "tx_mask_teacher_main_area": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_teacher_main_area",
+                    "inlineParent": "tx_mask_teacher",
+                    "key": "teacher_main_area",
+                    "label": "Teacher Main Area",
+                    "order": 3,
+                    "type": "string"
+                },
+                "tx_mask_teacher_name": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_teacher_name",
+                    "inlineParent": "tx_mask_teacher",
+                    "key": "teacher_name",
+                    "label": "Teacher Name",
+                    "order": 2,
+                    "type": "string"
+                }
+            }
+        },
+        "tx_mask_topic_teacher": {
+            "sql": {
+                "tx_mask_responsibilities_repeat": {
+                    "tx_mask_topic_teacher": {
+                        "tx_mask_responsibilities_repeat": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_topic_teacher_email": {
+                    "tx_mask_topic_teacher": {
+                        "tx_mask_topic_teacher_email": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_topic_teacher_image": {
+                    "tx_mask_topic_teacher": {
+                        "tx_mask_topic_teacher_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_topic_teacher_name": {
+                    "tx_mask_topic_teacher": {
+                        "tx_mask_topic_teacher_name": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_topic_teacher_profile_page": {
+                    "tx_mask_topic_teacher": {
+                        "tx_mask_topic_teacher_profile_page": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_responsibilities_repeat": {
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_responsibilities_repeat",
+                    "inlineParent": "tx_mask_topic_teacher",
+                    "key": "responsibilities_repeat",
+                    "label": "Responsibilities",
+                    "order": 3,
+                    "type": "inline"
+                },
+                "tx_mask_topic_teacher_email": {
+                    "config": {
+                        "renderType": "inputLink",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_topic_teacher_email",
+                    "inlineParent": "tx_mask_topic_teacher",
+                    "key": "topic_teacher_email",
+                    "label": "Topic Teacher Email",
+                    "order": 4,
+                    "type": "link"
+                },
+                "tx_mask_topic_teacher_image": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileUploadAllowed": 1,
+                            "useSortable": 1
+                        },
+                        "maxitems": "1",
+                        "minitems": "1"
+                    },
+                    "fullKey": "tx_mask_topic_teacher_image",
+                    "imageoverlayPalette": 1,
+                    "inlineParent": "tx_mask_topic_teacher",
+                    "key": "topic_teacher_image",
+                    "label": "Topic Teacher Image",
+                    "order": 1,
+                    "type": "file"
+                },
+                "tx_mask_topic_teacher_name": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_topic_teacher_name",
+                    "inlineParent": "tx_mask_topic_teacher",
+                    "key": "topic_teacher_name",
+                    "label": "Topic Teacher Name",
+                    "order": 2,
+                    "type": "string"
+                },
+                "tx_mask_topic_teacher_profile_page": {
+                    "config": {
+                        "renderType": "inputLink",
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_topic_teacher_profile_page",
+                    "inlineParent": "tx_mask_topic_teacher",
+                    "key": "topic_teacher_profile_page",
+                    "label": "Topic Teacher Profile Page",
+                    "order": 5,
+                    "type": "link"
+                }
+            }
+        },
+        "tx_mask_topic_view_items": {
+            "sql": {
+                "tx_mask_topic_view_link": {
+                    "tx_mask_topic_view_items": {
+                        "tx_mask_topic_view_link": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_topic_view_link": {
+                    "cTypes": [
+                        "mask_topic_view_link"
+                    ],
+                    "config": {
+                        "appearance": {
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "tt_content",
+                        "overrideChildTca": {
+                            "columns": {
+                                "colPos": {
+                                    "config": {
+                                        "default": 999
+                                    }
+                                }
+                            }
+                        },
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_topic_view_link",
+                    "inlineParent": "tx_mask_topic_view_items",
+                    "key": "topic_view_link",
+                    "label": "Topic View Link",
+                    "order": 1,
+                    "type": "content"
                 }
             }
         }

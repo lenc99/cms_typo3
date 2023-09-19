@@ -50,49 +50,49 @@
                 </f:if>
             </div>
         </section>
-    </f:section>
 
-    <f:for each="{data.tx_mask_portfolio_item}" as="portfolio_item" iteration="portfolio_index">
-        <div class="portfolio-modal modal fade" id="portfolioModal{portfolio_item.uid}" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal">
-                        <f:image src="EXT:base_website/Resources/Public/Images/close-icon.svg" alt="Close modal" />
-                    </div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase">
-                                        <f:if condition="{portfolio_item.tx_mask_portfolio_item_heading}">
-                                            {portfolio_item.tx_mask_portfolio_item_heading}
-                                        </f:if>
-                                    </h2>
-                                    <p class="item-intro text-muted">
-                                        <f:if condition="{portfolio_item.tx_mask_portfolio_item_subheading}">
-                                            {portfolio_item.tx_mask_portfolio_item_subheading}
-                                        </f:if>
-                                    </p>
-                                    <f:for each="{portfolio_item.tx_mask_portfolio_item_image}" as="file">
-                                        <f:image class="img-fluid d-block mx-auto" image="{file}" alt="{file.description}"/>
-                                    </f:for>
-                                    <p>
-                                        <f:if condition="{portfolio_item.tx_mask_modal_popup_description}">
-                                            {portfolio_item.tx_mask_modal_popup_description -> f:format.nl2br()}
-                                        </f:if>
-                                    </p>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        schliessen
-                                    </button>
+        <f:for each="{data.tx_mask_portfolio_item}" as="portfolio_item" iteration="portfolio_index">
+            <div class="portfolio-modal modal fade" id="portfolioModal{portfolio_item.uid}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-bs-dismiss="modal">
+                            <f:image src="EXT:base_website/Resources/Public/Images/close-icon.svg" alt="Close modal" />
+                        </div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="modal-body">
+                                        <h2 class="text-uppercase">
+                                            <f:if condition="{portfolio_item.tx_mask_portfolio_item_heading}">
+                                                {portfolio_item.tx_mask_portfolio_item_heading}
+                                            </f:if>
+                                        </h2>
+                                        <p class="item-intro text-muted">
+                                            <f:if condition="{portfolio_item.tx_mask_portfolio_item_subheading}">
+                                                {portfolio_item.tx_mask_portfolio_item_subheading}
+                                            </f:if>
+                                        </p>
+                                        <f:for each="{portfolio_item.tx_mask_portfolio_item_image}" as="file">
+                                            <f:image class="img-fluid d-block mx-auto" image="{file}" alt="{file.description}"/>
+                                        </f:for>
+                                        <p>
+                                            <f:if condition="{portfolio_item.tx_mask_modal_popup_description}">
+                                                {portfolio_item.tx_mask_modal_popup_description -> f:format.nl2br()}
+                                            </f:if>
+                                        </p>
+                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                            <i class="fas fa-xmark me-1"></i>
+                                            schliessen
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </f:for>
+        </f:for>
+    </f:section>
 
     <f:comment>
         <f:if condition="{data.tx_mask_heading}">
