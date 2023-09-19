@@ -1,4 +1,5 @@
 Sitepackage for the project "Base Website"
 ==============================================================
 
-Add some explanation here.
+CMS SS23
+Team G
